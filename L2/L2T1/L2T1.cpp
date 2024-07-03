@@ -10,11 +10,11 @@ private:
     double num1, num2;
 
 public:
-    bool set_num1(double num) 
+    bool set_num1( double num ) 
     {
         if ( num ) 
         {
-            num1 = num;
+            this->num1 = num;  // можно писать this  а можно и не писать
             return true;
         }
         return false;
@@ -24,7 +24,7 @@ public:
     {
         if (num ) 
         {
-            num2 = num;
+            this->num2 = num;
             return true;
         }
         return false;
