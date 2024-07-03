@@ -1,20 +1,94 @@
-﻿// L2T1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
-//
+﻿#include <iostream>
+#include <string>
+#include <windows.h>
+#include <locale.h>
+using namespace std;
 
-#include <iostream>
-
-int main()
+class Calculator 
 {
-    std::cout << "Hello World!\n";
+private:
+    double num1, num2;
+
+public:
+    bool set_num1(double num) 
+    {
+        if ( num ) 
+        {
+            num1 = num;
+            return true;
+        }
+        return false;
+    }
+
+    bool set_num2( double num ) 
+    {
+        if (num ) 
+        {
+            num2 = num;
+            return true;
+        }
+        return false;
+    }
+
+    double add() 
+    {
+        return num1 + num2;
+    }
+
+    double multiply() 
+    {
+        return num1 * num2;
+    }
+
+    double subtract_1_2() 
+    {
+        return num1 - num2;
+    }
+
+    double subtract_2_1() 
+    {
+        return num2 - num1;
+    }
+
+    double divide_1_2() 
+    {
+        return num1 / num2;
+    }
+
+    double divide_2_1() 
+    {
+        return num2 / num1;
+    }
+};
+
+int main( void ) 
+{
+    Calculator calc;
+    double num1, num2;
+
+    SetConsoleOutputCP(CP_UTF8); SetConsoleCP(CP_UTF8);
+
+    while (true) 
+    {
+        cout << "Введите num1: ";
+        cin >> num1;
+        cout << "Введите num2: ";
+        cin >> num2;
+
+        if ( calc.set_num1(num1) && calc.set_num2(num2) ) 
+        {
+            cout << "num1 + num2 = " << calc.add() << endl;
+            cout << "num1 - num2 = " << calc.subtract_1_2() << endl;
+            cout << "num2 - num1 = " << calc.subtract_2_1() << endl;
+            cout << "num1 * num2 = " << calc.multiply() << endl;
+            cout << "num1 / num2 = " << calc.divide_1_2() << endl;
+            cout << "num2 / num1 = " << calc.divide_2_1() << endl;
+        }
+        else 
+        {
+            cout << "Неверный ввод!" << endl;
+        }
+    }
+
+    return 0;
 }
-
-// Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
-// Отладка программы: F5 или меню "Отладка" > "Запустить отладку"
-
-// Советы по началу работы 
-//   1. В окне обозревателя решений можно добавлять файлы и управлять ими.
-//   2. В окне Team Explorer можно подключиться к системе управления версиями.
-//   3. В окне "Выходные данные" можно просматривать выходные данные сборки и другие сообщения.
-//   4. В окне "Список ошибок" можно просматривать ошибки.
-//   5. Последовательно выберите пункты меню "Проект" > "Добавить новый элемент", чтобы создать файлы кода, или "Проект" > "Добавить существующий элемент", чтобы добавить в проект существующие файлы кода.
-//   6. Чтобы снова открыть этот проект позже, выберите пункты меню "Файл" > "Открыть" > "Проект" и выберите SLN-файл.
