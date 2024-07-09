@@ -10,18 +10,22 @@ using namespace std;
 
 class Address {
 private:
-    string city;
-    string street;
-    int houseNumber;
-    int apartmentNumber;
+    string city="";
+    string street="";
+    int houseNumber=0;
+    int apartmentNumber=0;
 
 public:
     // Конструктор по умолчанию
-    Address() : city(""), street(""), houseNumber(0), apartmentNumber(0) {}
+    Address() /* : city(""), street(""), houseNumber(0), apartmentNumber(0) */ {}
 
     // Конструктор с параметрами
     Address(string city, string street, int houseNumber, int apartmentNumber)
-        : city(city), street(street), houseNumber(houseNumber), apartmentNumber(apartmentNumber) {}
+        :  street(street), houseNumber(houseNumber), apartmentNumber(apartmentNumber) 
+    {
+		this->city = city;
+    
+    }
 
     // Методы для установки значений
     void setCity(string city) {
@@ -32,7 +36,12 @@ public:
         this->street = street;
     }
 
-    void setHouseNumber(int houseNumber) {
+    void setHouseNumber(int houseNumber) 
+    {
+        if (houseNumber < 0) 
+        {
+            throw invalid_argument("House number must be non-negative.");
+        }else
         this->houseNumber = houseNumber;
     }
 
