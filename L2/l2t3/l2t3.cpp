@@ -80,7 +80,7 @@ int main( int argc, char *argv[] )
     SetConsoleOutputCP(CP_UTF8); SetConsoleCP(CP_UTF8);
 
 
-    if (argc < 1) // есть ли файл в коммандной строке
+    if (argc < 2 ) // есть ли файл в коммандной строке
     {
         cerr << "Нет аргументов." << endl;
         return 1;
@@ -126,7 +126,7 @@ int main( int argc, char *argv[] )
         return 1;
     }
     //-------------------- пишем файл в новом формате ---------
-    if( strlen( argv[2] ) ) // если нужно сортить
+    if(  argc >= 3 ) // если нужно сортить
         sortAddressesByCity(addresses, numberOfAddresses); // сортим
 
     ofstream outputFile("out.txt");
