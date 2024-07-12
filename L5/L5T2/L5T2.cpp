@@ -88,24 +88,22 @@ public:
 class rightTriangle : public Triangle
 {
 private:
-    int sideA = 1, sideB = 2, sideC = 3,
-        angleA = 45, angleB = 45, angleC = 90;
+   // int sideA = 1, sideB = 2, sideC = 3,
+    //    angleA = 45, angleB = 45, angleC = 90;
 public:
     //  конструктор с параметрами
 
     rightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC )
     {
-        this->sideA = sideA; this->sideB = sideB; this->sideC = sideC;
-        this->angleA = angleA; this->angleC = angleC; this->angleB = angleB;
-
-        if (this->angleC != 90)
+       
+        if (angleC != 90)
         {
             cerr << "Неверно задан угол С прямоугольного треугольника " << endl;
         }
         else 
-            Triangle( sideA, sideB, sideC, angleA, angleB, angleC);
+           Triangle( sideA, sideB, sideC, angleA, angleB, angleC);
     };
-public:
+
     rightTriangle() : Triangle(1,1,1,45,45,90 ) {}
 
 
