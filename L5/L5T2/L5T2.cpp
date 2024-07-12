@@ -92,18 +92,15 @@ private:
       angleA = 45, angleB = 45, angleC = 90;
 public:
     //  конструктор с параметрами
-    rightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC )
+
+    rightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) :
+    Triangle(sideA, sideB, sideC, angleA, angleB, angleC) 
     {
-       
-        if (angleC != 90)
-        {
-            cerr << "Неверно задан угол С прямоугольного треугольника " << endl;
-        }
-        else 
-           Triangle( sideA, sideB, sideC, angleA, angleB, angleC);
+        this->sideA = sideA; this->sideB = sideB; this->sideC = sideC;
+        this->angleA = angleA; this->angleC = angleC; this->angleB = angleB;
     };
 
-    rightTriangle() : Triangle(1,1,1,45,45,90 ) {}
+    rightTriangle() : Triangle(1, 1, 1, 45, 45, 90) {};
 
 
 };
