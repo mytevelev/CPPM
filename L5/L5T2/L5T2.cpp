@@ -96,8 +96,13 @@ public:
     rightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC) :
     Triangle(sideA, sideB, sideC, angleA, angleB, angleC) 
     {
-        this->sideA = sideA; this->sideB = sideB; this->sideC = sideC;
-        this->angleA = angleA; this->angleC = angleC; this->angleB = angleB;
+        if (angleC != 90)
+            cerr << "Неверно задан угол С треугольника " << endl;
+        else
+        {
+            this->sideA = sideA; this->sideB = sideB; this->sideC = sideC;
+            this->angleA = angleA; this->angleC = angleC; this->angleB = angleB;
+        };
     };
 
     rightTriangle() : Triangle(1, 1, 1, 45, 45, 90) {};
@@ -119,7 +124,7 @@ int main()
     Triangle triangle( 10,11,12,60,60,60);
     Quadrangle quadrangle;
 
-    rightTriangle rt(20, 21, 22, 45, 45, 90);
+    rightTriangle rt(30, 31, 32, 45, 45, 91);
 
     cout << "Количество сторон:" << endl;
     cout << baseFigure.get_name() << ": " << baseFigure.get_sides_count() << endl;
