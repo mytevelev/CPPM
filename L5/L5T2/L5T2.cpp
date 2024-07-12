@@ -33,7 +33,7 @@ public:
 
 class Triangle : public Figure { //----------- TRAINGLE
 private:
-    int sideA = 1, sideB =2, sideC = 3,
+    int sideA = 100, sideB =200, sideC = 300,
         angleA = 60, angleB = 60, angleC = 60;
 public:
     //  конструктор с параметрами
@@ -88,11 +88,10 @@ public:
 class rightTriangle : public Triangle
 {
 private:
-   // int sideA = 1, sideB = 2, sideC = 3,
-    //    angleA = 45, angleB = 45, angleC = 90;
+   int sideA = 1, sideB = 2, sideC = 3,
+      angleA = 45, angleB = 45, angleC = 90;
 public:
     //  конструктор с параметрами
-
     rightTriangle(int sideA, int sideB, int sideC, int angleA, int angleB, int angleC )
     {
        
