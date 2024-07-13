@@ -124,7 +124,7 @@ int main()
     Triangle triangle( 10,11,12,60,60,60);
     Quadrangle quadrangle;
 
-    rightTriangle rt(30, 31, 32, 45, 45, 91);
+    rightTriangle rt(30, 31, 32, 45, 45, 90);
 
     cout << "Количество сторон:" << endl;
     cout << baseFigure.get_name() << ": " << baseFigure.get_sides_count() << endl;
