@@ -194,29 +194,12 @@ public:
 
 void print_info(Figure* f)  //---------------------------------------------------------
 {
-    switch (f->get_sides_count())
-    {
-    case 3:
-        cout << "Треугольник" << endl;
-        cout << f->get_name() << ": " << f->get_sides_count()
-            << " side A: " << f->get_sA() << " side B: " << f->get_sB() << " side C: " << f->get_sC()
-            << " angle A: " << f->get_aA() << " angle B: " << f->get_aB() << " angle C: " << f->get_aC()
-            << endl;
+    f->printinfo();
 
-        break;
-    case 4:
-        cout << "Четырёхугольник" << endl;
-        cout << f->get_name() << ": " << f->get_sides_count()
-            << " side A: " << f->get_sA() << " side B: " << f->get_sB() << " side C: " << f->get_sC() << " side d: " << f->get_sD()
-            << " angle A: " << f->get_aA() << " angle B: " << f->get_aB() << " angle C: " << f->get_aC() << " angle D: " << f->get_aD()
-            << endl;
-
-        break;
-
-    };
+};
 
 
-}////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////
 
 int main()
 {
@@ -225,7 +208,7 @@ int main()
     Triangle triangle(10, 11, 12, 60, 60, 60);
     Quadrangle quadrangle;
 
-    rightTriangle rt(30, 31, 32, 45, 45, 91);
+    rightTriangle rt(30, 31, 32, 45, 45, 90);
 
     eqTriangle et(300, 300, 300, 60, 60, 60);
 
@@ -233,7 +216,7 @@ int main()
     baseFigure.printinfo();
     rt.printinfo();
     et.printinfo();
-    quadrangle.printinfo();
+    print_info(&quadrangle);
 
 #if PRN 
     //-------------------------------------------------------
