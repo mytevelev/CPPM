@@ -17,7 +17,10 @@ protected:
         angleA = 60, angleB = 60, angleC = 60, angleD = 60;
 
     // Защищённый конструктор с параметром
-    Figure(int sides_count, string name) : sides_count(sides_count), name(name) {}
+    Figure(int sides_count, string name) : sides_count(sides_count), name(name) 
+    {
+        if (sides_count == 4 ) { angleA = 90, angleB = 90, angleC = 90, angleD = 90; }
+    }
 
 public:
     // Публичный конструктор без параметров
@@ -186,15 +189,78 @@ public:
 };
 
 
-class Quadrangle : public Figure { //------------------------------ Quadrangle
+class Quadrangle : public Figure //------------------------------ Quadrangle
+{ 
 public:
+   
+    //  конструктор с параметрами
+    Quadrangle(int sideA, int sideB, int sideC,int sideD, int angleA, int angleB, int angleC, int angleD )
+        : Figure(4, "Четырёхугольник")
+    {
+
+        this->sideA = sideA; this->sideB = sideB; this->sideC = sideC; this->sideD = sideD;
+        this->angleA = angleA;  this->angleB = angleB; this->angleC = angleC; this->angleD = angleD;
+        if (sideA <= 0 || sideB <= 0 || sideC <= 0 || sideD <= 0)
+        {
+            cerr << "Неверно задвны стороны треугольника " << endl;
+
+        }
+        if ((angleA <= 0 || angleB <= 0 || angleC <= 0 || angleD <= 0) || (angleA + angleB + angleC+ angleD) != 360)
+        {
+            cerr << "Неверно заданы углы треугольника " << endl;
+
+        }
+
+    };
+
     // Конструктор по умолчанию
     Quadrangle() : Figure(4, "Четырёхугольник") {}
+
+    void printinfo() override
+    {
+        string err[] = { "OK","BAD" };
+
+        cout << err[check()] << endl;
+        cout << get_name() << ": " << get_sides_count()
+            << " side A: " << get_sA() << " side B: " << get_sB() << " side C: " << get_sC() << " side D: " << get_sD()
+            << " angle A: " << get_aA() << " angle B: " << get_aB() << " angle C: " << get_aC() << " angle D: " << get_aD()
+            << endl;
+
+    }
+
+    bool check() override  ///// checking angles
+    {
+        int angles = get_aA() + get_aB() + get_aC() + get_aD();
+        if ( angles != 360) return true;
+
+        return false;
+    };
+
+
+
+
 };
 
-void print_info(Figure* f)  //---------------------------------------------------------
+class Rhombus : public Quadrangle
 {
-    f->printinfo();
+public:
+
+    Rhombus(int sideA, int sideB, int sideC, int sideD , int angleA, int angleB, int angleC, int angleD ) : /// тут вызвается конструктор родителя с параметрами
+        Quadrangle(sideA, sideB, sideC, sideD, angleA, angleB, angleC,angleD)
+    {
+        if (!((sideA == sideB) && (sideC == sideB)))
+            cerr << "Неверно заданы стороны ромба. " << endl;
+        name = "Ромб";
+    }; /// вот тут объект создан
+
+    Rhombus() : Quadrangle(1, 1, 1,1, 80,100, 80, 100) { name = "Ромб"; }; // простой конструктор
+    bool check() override  ///// checking angles
+    {
+        if (Quadrangle::check()) return true;
+        if( (get_aA() !=  get_aC()) || (get_aB() != get_aD()) ) return true;
+
+        return false;
+    };
 
 };
 
@@ -207,6 +273,7 @@ int main()
     Figure baseFigure;
     Triangle triangle(10, 11, 12, 60, 60, 60);
     Quadrangle quadrangle;
+    Rhombus rb( 77,77,77,77,60,120,60,120);
 
     rightTriangle rt(30, 31, 32, 45, 45, 90);
 
@@ -216,7 +283,7 @@ int main()
     baseFigure.printinfo();
     rt.printinfo();
     et.printinfo();
-    print_info(&quadrangle);
+    rb.printinfo();
 
 #if PRN 
     //-------------------------------------------------------
