@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <cmath>
 using namespace std;
 
@@ -23,6 +23,10 @@ double power(double a, double b)
 double divide(double a, double b) 
 {
 
-    if (!b) return 0;
+    if (!b)
+    {
+        cerr << "Ошибка: деление на ноль!" << endl;
+        return 0;
+    };
        return a / b;
 }

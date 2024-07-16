@@ -2,8 +2,8 @@
 #include <string>
 #include <windows.h>
 #include <locale.h>
+#include "mheader.h"
 
-#include "mymath.cpp" 
 
 using namespace std;
 
