@@ -24,12 +24,18 @@
     <ClCompile Include="q.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="r.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fig.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="q.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="r.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

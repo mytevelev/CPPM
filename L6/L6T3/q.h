@@ -13,10 +13,9 @@ using namespace std; //----------------
 class Quadrangle : public Figure //------------------------------ Quadrangle
 {
 public:
-	Quadrangle() : Figure(4, "Четырёхугольник");
+	Quadrangle() ;
 
-	Quadrangle(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD)
-		: Figure(4, "Четырёхугольник");
+	Quadrangle(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD);
 	void printinfo() override;
 	bool check() override;
 
