@@ -5,9 +5,9 @@
 #include <fstream>
 #include <string>
 #include <algorithm>
-
-#include "fig.h"
 using namespace std; //---------------- 
+#include "fig.h"
+
 #define PRN 0
 
 
