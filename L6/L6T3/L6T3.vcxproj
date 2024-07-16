@@ -130,9 +130,11 @@
   <ItemGroup>
     <ClCompile Include="fig.cpp" />
     <ClCompile Include="L6T3.cpp" />
+    <ClCompile Include="q.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fig.h" />
+    <ClInclude Include="q.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

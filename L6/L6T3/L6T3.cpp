@@ -3,10 +3,11 @@
 #include <windows.h>
 #include <locale.h>
 #include <fstream>
-#include <string>
+
 #include <algorithm>
 using namespace std; //---------------- 
 #include "fig.h"
+#include "q.h"
 
 #define PRN 0
 
@@ -117,58 +118,6 @@ public:
 
 };
 
-
-class Quadrangle : public Figure //------------------------------ Quadrangle
-{
-public:
-
-    //  конструктор с параметрами
-    Quadrangle(int sideA, int sideB, int sideC, int sideD, int angleA, int angleB, int angleC, int angleD)
-        : Figure(4, "Четырёхугольник")
-    {
-
-        this->sideA = sideA; this->sideB = sideB; this->sideC = sideC; this->sideD = sideD;
-        this->angleA = angleA;  this->angleB = angleB; this->angleC = angleC; this->angleD = angleD;
-        if (sideA <= 0 || sideB <= 0 || sideC <= 0 || sideD <= 0)
-        {
-            cerr << "Неверно задвны стороны треугольника " << endl;
-
-        }
-        if ((angleA <= 0 || angleB <= 0 || angleC <= 0 || angleD <= 0) || (angleA + angleB + angleC + angleD) != 360)
-        {
-            cerr << "Неверно заданы углы треугольника " << endl;
-
-        }
-
-    };
-
-    // Конструктор по умолчанию
-    Quadrangle() : Figure(4, "Четырёхугольник") {}
-
-    void printinfo() override
-    {
-        string err[] = { "OK","BAD" };
-
-        cout << err[check()] << endl;
-        cout << get_name() << ": " << get_sides_count()
-            << " side A: " << get_sA() << " side B: " << get_sB() << " side C: " << get_sC() << " side D: " << get_sD()
-            << " angle A: " << get_aA() << " angle B: " << get_aB() << " angle C: " << get_aC() << " angle D: " << get_aD()
-            << endl;
-
-    }
-
-    bool check() override  ///// checking angles
-    {
-        int angles = get_aA() + get_aB() + get_aC() + get_aD();
-        if (angles != 360) return true;
-
-        return false;
-    };
-
-
-
-
-};
 
 class Rhombus : public Quadrangle
 {

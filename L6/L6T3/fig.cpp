@@ -2,7 +2,13 @@
 using namespace std; //---------------- 
 
 // Публичный конструктор без параметров
-Figure::Figure() : sides_count(0), name("Фигура") {}
+Figure::Figure() : sides_count(0), name("Фигура") {};
+// Защищённый конструктор с параметром
+Figure::Figure(int sides_count, string name) : sides_count(sides_count), name(name)
+{
+    if (sides_count == 4) { angleA = 90, angleB = 90, angleC = 90, angleD = 90; }
+}
+
 
 // Публичный метод для получения количества сторон
 int Figure::get_sides_count() const 
@@ -59,3 +65,6 @@ int Figure::get_aD() const
 
     return false;
 }
+
+ //----------------------------------------------------------------
+
