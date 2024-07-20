@@ -3,6 +3,14 @@
 #include <exception>
 #include <windows.h>
 
+class BadLength : public std::runtime_error
+{
+public:
+    BadLength(std::string filename, int pos, std::string text) : std::runtime_error(filename + std::to_string(pos) + " " + text) {}
+};
+
+
+
 // Определяем исключение bad_length
 class bad_length : public std::exception 
 {
@@ -19,7 +27,8 @@ int function(std::string str, int forbidden_length)
     if (str.length() == forbidden_length) 
     {
        // throw bad_length();
-        throw std::runtime_error("bad_length");
+       // throw std::runtime_error("bad_length");
+        throw( BadLength( "1.1 ",25," error"));
     }
     return str.length();
 }
