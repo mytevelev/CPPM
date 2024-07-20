@@ -1,7 +1,6 @@
 ﻿#include <iostream>
 #include <string>
 #include <exception>
-
 #include <windows.h>
 
 // Определяем исключение bad_length
@@ -19,7 +18,8 @@ int function(std::string str, int forbidden_length)
 {
     if (str.length() == forbidden_length) 
     {
-        throw bad_length();
+       // throw bad_length();
+        throw std::runtime_error("bad_length");
     }
     return str.length();
 }
@@ -40,15 +40,29 @@ int main()
         std::cout << "Введите слово: ";
         std::getline(std::cin, word);
 
-        try 
+        try
         {
             int length = function(word, forbidden_length);
             std::cout << "Длина слова \"" << word << "\" равна " << length << std::endl;
+           // throw(3);
+
         }
-        catch (const bad_length&) 
+        catch (int)
+        {
+            std::cout << "INT!!" << std::endl;
+            break;
+
+        }
+        catch (const bad_length &e) 
         {
             std::cout << "Вы ввели слово запретной длины! До свидания" << std::endl;
-            break;
+            
+        }
+        catch (std::exception& e )
+        {
+            std::cout << e.what() << std::endl;
+
+
         }
     }
 
