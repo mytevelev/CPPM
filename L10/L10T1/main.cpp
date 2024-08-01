@@ -5,6 +5,7 @@
 using namespace std;
 
 int main() {
+<<<<<<< HEAD
     // Óñòàíîâêà êîäèğîâêè êîíñîëè íà UTF-8
     SetConsoleOutputCP(CP_UTF8);
     SetConsoleCP(CP_UTF8);
@@ -16,6 +17,19 @@ int main() {
 
     // Ïğèâåòñòâèå ïîëüçîâàòåëÿ
     cout << "Çäğàâñòâóéòå, " << name << "!" << endl;
+=======
+    // Ğ£ÑÑ‚Ğ°Ğ½Ğ¾Ğ²ĞºĞ° ĞºĞ¾Ğ´Ğ¸Ñ€Ğ¾Ğ²ĞºĞ¸ ĞºĞ¾Ğ½ÑĞ¾Ğ»Ğ¸ Ğ½Ğ° UTF-8
+    SetConsoleOutputCP(CP_UTF8);
+    SetConsoleCP(CP_UTF8);
+
+    // Ğ—Ğ°Ğ¿Ñ€Ğ¾Ñ Ğ¸Ğ¼ĞµĞ½Ğ¸ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ
+    string name;
+    cout << "Ğ’Ğ²ĞµĞ´Ğ¸Ñ‚Ğµ Ğ¸Ğ¼Ñ: ";
+    getline(cin, name);
+
+    // ĞŸÑ€Ğ¸Ğ²ĞµÑ‚ÑÑ‚Ğ²Ğ¸Ğµ Ğ¿Ğ¾Ğ»ÑŒĞ·Ğ¾Ğ²Ğ°Ñ‚ĞµĞ»Ñ
+    cout << "Ğ—Ğ´Ñ€Ğ°Ğ²ÑÑ‚Ğ²ÑƒĞ¹Ñ‚Ğµ, " << name << "!" << endl;
+>>>>>>> 3195b580a1c0b895cc74c05c2b45532fe70f1f50
 
     return 0;
 }
