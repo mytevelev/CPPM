@@ -1,0 +1,4 @@
+C:/ODThai/OneDrive/coding/Reposit/CPPM/L11/L11T3/build/CMakeFiles/L11T3.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/L11/L11T3/build/CMakeFiles/leaver.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/L11/L11T3/build/CMakeFiles/ALL_BUILD.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/L11/L11T3/build/CMakeFiles/ZERO_CHECK.dir
