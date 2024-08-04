@@ -1,0 +1,4 @@
+C:/ODThai/OneDrive/coding/Reposit/CPPM/diplom/DIPLOM_CMAKE/CMakeFiles/race.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/diplom/DIPLOM_CMAKE/CMakeFiles/transport.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/diplom/DIPLOM_CMAKE/CMakeFiles/ALL_BUILD.dir
+C:/ODThai/OneDrive/coding/Reposit/CPPM/diplom/DIPLOM_CMAKE/CMakeFiles/ZERO_CHECK.dir

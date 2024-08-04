@@ -1,11 +1,6 @@
 #pragma once
 
 #include <string>
-#ifdef TRANSP_EXPORTS  //Макрос экспорта
-#define TRANSP_API __declspec(dllexport)
-#else 
-#define TRANSP_API __declspec(dllimport)
-#endif
 
 enum class TransType
 {
@@ -19,12 +14,12 @@ protected:
     std::string name; // Имя транспортного средства
 
 public:
-    virtual double TRANSP_API calculateTotalTime(double distance) const = 0;
-    std::string TRANSP_API getName() const
+    virtual double calculateTotalTime(double distance) const = 0;
+    std::string getName() const
     {
         return name;
     }
-    bool TRANSP_API getType() const
+    bool getType() const
     {
         return type;
     }

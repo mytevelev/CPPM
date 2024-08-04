@@ -15,8 +15,11 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="kursovik.cpp">
+    <ClInclude Include="..\kursovik\transport.h">
       <Filter>Исходные файлы</Filter>
-    </ClCompile>
+    </ClInclude>
+    <ClInclude Include="..\kursovik\racers.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

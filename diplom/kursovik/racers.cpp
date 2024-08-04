@@ -1,10 +1,10 @@
-#pragma once
 
 #include "Transport.h"
 
 class Camel : public Transport {
 public:
-    Camel() {
+    Camel() 
+    {
         type = false;
         name = "Верблюд";
     }
@@ -169,7 +169,7 @@ public:
 
     double calculateTotalTime(double distance) const override {
         double speed = 20;
-        int reduction =(int) (distance / 1000); // Увеличивается на 1% за каждую 1000 у.е. расстояния
+        int reduction = static_cast<int>(distance / 1000); // Увеличивается на 1% за каждую 1000 у.е. расстояния
         double red = reduction;  // to float
         double reducedDistance = distance * (1 - red / 100);
         return reducedDistance / speed;
