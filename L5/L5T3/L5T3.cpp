@@ -277,7 +277,7 @@ int main()
 
     rightTriangle rt(30, 31, 32, 45, 45, 90);
 
-    eqTriangle et(300, 300, 300, 60, 60, 60);
+    eqTriangle et(300, 300, 300, 60, 60, 60); ////--------------
 
 
     baseFigure.printinfo();
