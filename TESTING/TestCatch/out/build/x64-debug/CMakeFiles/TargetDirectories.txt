@@ -1,0 +1,3 @@
+C:/Users/tevel/OneDrive/coding/Reposit/CPPM/TESTING/TestCatch/out/build/x64-debug/CMakeFiles/TestCatch.dir
+C:/Users/tevel/OneDrive/coding/Reposit/CPPM/TESTING/TestCatch/out/build/x64-debug/CMakeFiles/edit_cache.dir
+C:/Users/tevel/OneDrive/coding/Reposit/CPPM/TESTING/TestCatch/out/build/x64-debug/CMakeFiles/rebuild_cache.dir
