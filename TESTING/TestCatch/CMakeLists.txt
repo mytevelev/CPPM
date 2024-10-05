@@ -10,12 +10,22 @@ if (POLICY CMP0141)
 endif()
 
 project ("TestCatch")
+#ищем библиотеку для подключения Catch2 из vcpkg: 
+find_package(Catch2 CONFIG REQUIRED)
+
+  # this is heuristically generated, and may not be correct
+#  find_package(NumCpp CONFIG REQUIRED)
 
 # Добавьте источник в исполняемый файл этого проекта.
-add_executable (TestCatch "TestCatch.cpp" "TestCatch.h")
+add_executable (TestCatch "TestCatch.cpp" "TestCatch.h" )
+add_executable (MyList "main.cpp" "MyList.h" )	
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET TestCatch PROPERTY CXX_STANDARD 20)
 endif()
 
 # TODO: Добавьте тесты и целевые объекты, если это необходимо.
+#линкуем библиотеки Catch2 
+target_link_libraries(TestCatch PRIVATE Catch2::Catch2 Catch2::Catch2WithMain)
+
+#  target_link_libraries(TestCatch PRIVATE NumCpp::NumCpp)

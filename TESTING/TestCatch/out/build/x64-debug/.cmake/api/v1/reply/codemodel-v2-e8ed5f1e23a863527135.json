@@ -15,7 +15,8 @@
 					"source" : ".",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -30,7 +31,8 @@
 					"name" : "TestCatch",
 					"targetIndexes" : 
 					[
-						0
+						0,
+						1
 					]
 				}
 			],
@@ -38,8 +40,15 @@
 			[
 				{
 					"directoryIndex" : 0,
+					"id" : "MyList::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-MyList-Debug-589306e965e7147ca69c.json",
+					"name" : "MyList",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "TestCatch::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-TestCatch-Debug-288e757245ac2a4fe51c.json",
+					"jsonFile" : "target-TestCatch-Debug-962876ca3ce4be4339c8.json",
 					"name" : "TestCatch",
 					"projectIndex" : 0
 				}

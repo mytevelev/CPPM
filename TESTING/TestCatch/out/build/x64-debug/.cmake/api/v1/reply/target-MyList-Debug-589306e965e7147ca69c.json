@@ -2,40 +2,41 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "TestCatch.exe"
+			"path" : "MyList.exe"
 		},
 		{
-			"path" : "TestCatch.pdb"
+			"path" : "MyList.pdb"
 		}
 	],
-	"backtrace" : 1,
+	"backtrace" : 2,
 	"backtraceGraph" : 
 	{
 		"commands" : 
 		[
-			"add_executable",
-			"set_property"
+			"_add_executable",
+			"add_executable"
 		],
 		"files" : 
 		[
+			"C:/vcpkg/scripts/buildsystems/vcpkg.cmake",
 			"CMakeLists.txt"
 		],
 		"nodes" : 
 		[
 			{
-				"file" : 0
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 21,
+				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 15,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 18,
-				"parent" : 0
+				"line" : 598,
+				"parent" : 1
 			}
 		]
 	},
@@ -45,25 +46,17 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -std:c++20 -ZI"
+					"fragment" : "/DWIN32 /D_WINDOWS /W3 /GR /EHsc /MDd /Ob0 /Od /RTC1 -ZI"
 				}
 			],
 			"language" : "CXX",
-			"languageStandard" : 
-			{
-				"backtraces" : 
-				[
-					2
-				],
-				"standard" : "20"
-			},
 			"sourceIndexes" : 
 			[
 				0
 			]
 		}
 	],
-	"id" : "TestCatch::@6890427a1f51a3e7e1df",
+	"id" : "MyList::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -83,8 +76,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "TestCatch",
-	"nameOnDisk" : "TestCatch.exe",
+	"name" : "MyList",
+	"nameOnDisk" : "MyList.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -110,14 +103,14 @@
 	"sources" : 
 	[
 		{
-			"backtrace" : 1,
+			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "TestCatch.cpp",
+			"path" : "main.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
-			"backtrace" : 1,
-			"path" : "TestCatch.h",
+			"backtrace" : 2,
+			"path" : "MyList.h",
 			"sourceGroupIndex" : 1
 		}
 	],
