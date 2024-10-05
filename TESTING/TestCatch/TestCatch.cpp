@@ -31,3 +31,44 @@ TEST_CASE("Check Clear")
 
 }
 
+TEST_CASE("Check PushFront,PopFront,PushBack, PopBack")
+{
+    List  l;
+    l.PushBack(1); l.PushBack(2);
+
+    REQUIRE(l.PopBack() == 2);
+    REQUIRE(l.PopBack() == 1);
+
+    l.PushBack(1); l.PushBack(2); // 1 2
+    l.PushFront(33);  // 33 1 2
+    REQUIRE(l.Size() == 3);
+
+    REQUIRE(l.PopFront() == 33);
+
+
+};
+
+TEST_CASE("Check PushFront,PopFront,PushBack, PopBack on Emty List")
+{
+    List  l;
+    /*
+    try 
+    {
+        l.PopFront();
+        REQUIRE(false);
+    }
+    catch ( std::exception& what )
+    {
+        std::cout << what.what() << std::endl;
+        REQUIRE(true);
+    }
+    */
+ 
+    SECTION("Empty list")
+    {
+        REQUIRE_THROWS( l.PopBack() );
+        REQUIRE_THROWS( l.PopFront() );
+    }
+     
+
+};
