@@ -75,7 +75,7 @@ public:
 
 private:
     // Структура данных для хранения значений INI-файла
-     unordered_map< string,  unordered_map< string,  string>> data;
+     unordered_map< string,  unordered_map< string,  string>> data;  // секции с данными
 
     // Функция для парсинга содержимого INI-файла
     void parse( ifstream& file) 
@@ -87,7 +87,7 @@ private:
         {
             // Удаление пробелов с начала и конца строки
             trim(line);
-            cout << line << endl;
+           // cout << line << endl;
             // Игнорируем пустые строки и комментарии
             if (line.empty() || line[0] == ';' || line[0] == '#') 
             {
@@ -124,7 +124,7 @@ private:
             }
         }
 //---------------------------------------------------------------------------------------------------
-        cout << "-----------------------------------" << endl;
+        cout << "--------------Parsed INI---------------------" << endl;
             // Iterate over each section in the outer map
         for (const auto& section_pair : data) 
         {
