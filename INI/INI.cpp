@@ -49,10 +49,12 @@ public:
     template <typename T>
     T get_value(const  string& key) const 
     {
-        auto pos = key.find('.');
+        auto pos = key.find('.'); 
         if (pos ==  string::npos) 
         {
-            throw  invalid_argument("Invalid key format. Use 'section.value'.");
+            pos = key.find(',');
+            if (pos == string::npos)
+                 throw  invalid_argument("Invalid key format. Use 'section.value'.");
         }
 
          string section = key.substr(0, pos);
